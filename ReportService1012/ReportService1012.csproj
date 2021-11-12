@@ -132,7 +132,10 @@
     <Compile Include="InterFace\ICalcXBSJ.cs" />
     <Compile Include="InterFace\ICurQty.cs" />
     <Compile Include="Jobs\PlanJob.cs" />
+    <Compile Include="Model\base_jx_bzcn.cs" />
+    <Compile Include="Model\base_zpjh_xh.cs" />
     <Compile Include="Model\sys_qty.cs" />
+    <Compile Include="Model\sys_sctj.cs" />
     <Compile Include="MQ\MQManager.cs" />
     <Compile Include="MQ\RabbitMQHelper.cs" />
     <Compile Include="ProjectInstaller.cs">
@@ -149,6 +152,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CalcXBSjService.cs" />
     <Compile Include="Services\QtyToMQService.cs" />
     <Compile Include="Tool\AutofacUtil.cs" />
   </ItemGroup>

@@ -9,11 +9,12 @@ using log4net;
 using Dapper;
 using Autofac.Extras.DynamicProxy;
 using ReportService1012.Interceptor;
+using ReportService1012.Model;
 
 namespace ReportService1012.Services
 {
     //[Intercept(typeof(TestCeptor))]
-    public class QtyToMQService : OracleBaseFixture, ICurQty, ICalcXBSJ
+    public class QtyToMQService : OracleBaseFixture, ICurQty
     {
         private ILog log;
         public QtyToMQService()
@@ -56,11 +57,6 @@ namespace ReportService1012.Services
                 throw;
             }
         }
-
-        public DateTime? GetXBSJ()
-        {
-            string d = DateTime.Now.ToString("yyyy-MM-dd 18:30:00");
-            return Convert.ToDateTime(d);
-        }
+        
     }
 }
