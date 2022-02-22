@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportService1012", "Report
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{60FC7AA4-EA1B-4138-B97B-DC62B79D77FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleWindowsService", "ConsoleWindowsService\ConsoleWindowsService.csproj", "{5A07F24C-030B-4983-9541-F558D6737037}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{60FC7AA4-EA1B-4138-B97B-DC62B79D77FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60FC7AA4-EA1B-4138-B97B-DC62B79D77FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60FC7AA4-EA1B-4138-B97B-DC62B79D77FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A07F24C-030B-4983-9541-F558D6737037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A07F24C-030B-4983-9541-F558D6737037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A07F24C-030B-4983-9541-F558D6737037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A07F24C-030B-4983-9541-F558D6737037}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

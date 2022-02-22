@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReportService1012.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,16 @@ namespace ReportService1012.InterFace
         /// 计划数量
         /// </summary>
         /// <returns></returns>
-        int GetCurJHS();
+        int Plan_Qty();
         /// <summary>
         /// 上线数量
         /// </summary>
         /// <returns></returns>
-        int GetCurSXS();
+        int SX_Qty();
+        /// <summary>
+        /// 状态数量
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<sys_ztsl> ZT_Qty();
     }
 }

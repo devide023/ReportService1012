@@ -9,7 +9,7 @@ namespace ReportService1012.MQ
     public class MQManager
     {
         private static MQManager instance = null;
-        public static RabbitMQCreater MQCreater;
+        public RabbitMQCreater MQCreater;
         private static readonly object padlock = new object();
         private MQManager()
         {

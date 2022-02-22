@@ -13,7 +13,9 @@ using ReportService1012.Model;
 
 namespace ReportService1012.Services
 {
-    //[Intercept(typeof(TestCeptor))]
+    /// <summary>
+    /// 订单信息
+    /// </summary>
     public class QtyToMQService : OracleBaseFixture, ICurQty
     {
         private ILog log;
@@ -25,7 +27,7 @@ namespace ReportService1012.Services
         /// 当日计划数量
         /// </summary>
         /// <returns></returns>
-        public int GetCurJHS()
+        public int Plan_Qty()
         {
             try
             {
@@ -43,7 +45,7 @@ namespace ReportService1012.Services
         /// 当日上线数量
         /// </summary>
         /// <returns></returns>
-        public int GetCurSXS()
+        public int SX_Qty()
         {
             try
             {
@@ -55,6 +57,24 @@ namespace ReportService1012.Services
             {
                 log.Error(e.Message);
                 throw;
+            }
+        }
+        /// <summary>
+        /// 统计当日状态数量
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<sys_ztsl> ZT_Qty()
+        {
+            try
+            {
+                StringBuilder sql = new StringBuilder();
+                sql.Append("select ztbm, count(ztbm) ztqty FROM   pp_zpjh where  trunc(jhsj) = trunc(sysdate) group by ztbm");
+                return Db.Connection.Query<sys_ztsl>(sql.ToString());
+            }
+            catch (Exception e)
+            {
+                log.Error(e.Message);
+                return new List<sys_ztsl>();
             }
         }
         

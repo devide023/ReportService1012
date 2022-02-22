@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace ReportService1012.Model
 {
-    public class sys_qty
+    public class sys_test
     {
-        /// <summary>
-        /// 状态数量
-        /// </summary>
-        public IEnumerable<sys_ztsl> zt_qty { get; set; }
-        
+        public string name { get; set; }
+        public string code { get; set; }
+
+        public int age { get; set; }
     }
 }

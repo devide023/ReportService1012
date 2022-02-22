@@ -31,14 +31,12 @@ namespace ReportService1012.Jobs
                 return Task.Run(() =>
                 {
                     sys_qty entity = new sys_qty();
-                    entity.drjhsl = _curqty.GetCurJHS();
-                    entity.drsxsl = _curqty.GetCurSXS();
-                    entity.xbsj = _calxbsj.GetXBSJ();
+                    entity.zt_qty = _curqty.ZT_Qty();
                     string json = JsonConvert.SerializeObject(entity);
                     log.Info("当前任务ID：" + Task.CurrentId.ToString());
-                    MQManager.Instance.Creator("scjh",out error);
-                    log.Info("_creator hash:" + MQManager.MQCreater.GetHashCode());
-                    MQManager.MQCreater.Send("scjh", json, out error);
+                    MQManager.Instance.Creator("OrderInfo",out error);
+                    log.Info("_creator hash:" + MQManager.Instance.MQCreater.GetHashCode());
+                    MQManager.Instance.MQCreater.Send("OrderInfo", json, out error);
                     if (!string.IsNullOrEmpty(error))
                     {
                         log.Error(error);
@@ -48,7 +46,6 @@ namespace ReportService1012.Jobs
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

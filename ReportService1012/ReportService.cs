@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Autofac;
 using ReportService1012.Tool;
+using Microsoft.Owin.Hosting;
+using ReportService1012.App_Start;
 
 namespace ReportService1012
 {
@@ -19,6 +21,8 @@ namespace ReportService1012
     {
         private ILog log;
         private IScheduler scheduler;
+        private const string _baseAddress = "http://localhost:9001/";
+        private IDisposable _server = null;
         public  ReportService()
         {
             InitializeComponent();
@@ -39,6 +43,7 @@ namespace ReportService1012
             try
             {
                 log.Info("--------启动服务---------");
+                _server = WebApp.Start<StartUp>(url: _baseAddress);
                 if (!scheduler.IsStarted)
                 {
                     scheduler.Start();
@@ -56,6 +61,7 @@ namespace ReportService1012
             {
                 scheduler.Shutdown();
             }
+            _server?.Dispose();
             base.OnStop();
             log.Info("--------服务停止---------");
         }

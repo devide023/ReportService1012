@@ -10,6 +10,9 @@ using Dapper;
 using log4net;
 namespace ReportService1012.Services
 {
+    /// <summary>
+    /// 计算下班时间
+    /// </summary>
     public class CalcXBSjService :OracleBaseFixture, ICalcXBSJ
     {
         private IEnumerable<sys_sctj> list = new List<sys_sctj>();
